@@ -12,6 +12,13 @@ stty -F $DEVICE -echo $BAUD
 
 exec 3<> $DEVICE
 
+while read -t 3 initial_message <&3; do
+    if [ $? -gt 128 ]; then
+        break
+    fi
+    echot "RECV: $initial_message"
+done
+
 while read gcode_line; do
     if [[ "$gcode_line" == ";"* ]]; then
         echot "IGNR: $gcode_line"
@@ -22,7 +29,7 @@ while read gcode_line; do
     fi
     while read -t 10 gcode_response <&3; do
         RETURN_CODE=$?
-        echot "RECV: "$gcode_response
+        echot "RECV: $gcode_response"
         if [ $RETURN_CODE -gt 128 ] || [[ "$gcode_response" == "ok"* ]]; then
             break
         fi
