@@ -26,12 +26,12 @@ while read gcode_line; do
     elif [ -n "$gcode_line" ]; then
         echot "SEND: $gcode_line"
         echo $gcode_line >&3
+        while read -t 10 gcode_response <&3; do
+            RETURN_CODE=$?
+            echot "RECV: $gcode_response"
+            if [ $RETURN_CODE -gt 128 ] || [[ "$gcode_response" == "ok"* ]]; then
+                break
+            fi
+        done
     fi
-    while read -t 10 gcode_response <&3; do
-        RETURN_CODE=$?
-        echot "RECV: $gcode_response"
-        if [ $RETURN_CODE -gt 128 ] || [[ "$gcode_response" == "ok"* ]]; then
-            break
-        fi
-    done
 done
