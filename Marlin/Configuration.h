@@ -377,14 +377,9 @@
   #define PID_FUNCTIONAL_RANGE 10 // If the temperature difference between the target temperature and the actual temperature
                                   // is more than PID_FUNCTIONAL_RANGE then the PID will be shut off and the heater will be set to min/max.
 
-  #define DEFAULT_Kp 29.99
-  #define DEFAULT_Ki 2.61
-  #define DEFAULT_Kd 85.99
-
-  // 2nd measure:
-  //#define DEFAULT_Kp 29.09
-  //#define DEFAULT_Ki 2.56
-  //#define DEFAULT_Kd 82.82
+  #define DEFAULT_Kp 34.55
+  #define DEFAULT_Ki 3.19
+  #define DEFAULT_Kd 93.39
 
 #endif // PIDTEMP
 
