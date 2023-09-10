@@ -595,7 +595,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 82, 82, 390, 415.99 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 82, 82, 390, 476.10 }
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 473.4, 94.69 } // Titan
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 78, 80, 485.2, 93.7 } // Bowden stara drukarka
 
