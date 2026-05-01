@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 MIN_X=10
-MAX_X=210
+MAX_X=190
 MIN_Y=10
-MAX_Y=210
+MAX_Y=190
 
 # init
 echo "G90"
